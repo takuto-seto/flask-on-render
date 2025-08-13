@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: flask-on-render       # Render 上のサービス名
+    env: python                 # Python 環境
+    plan: free                  # 無料プラン
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"  # モジュール名:Flaskインスタンス名
+    autoDeploy: true            # Git push で自動デプロイ
